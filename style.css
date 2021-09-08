@@ -1,0 +1,40 @@
+head, body{
+    cursor: url("favicon.ico"), default;
+    background-image: url(https://source.unsplash.com/1600x900/?white);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(3px); 
+}
+
+h1{
+    font-family: Poppins; 
+    text-align: center;
+}
+
+h4{
+    font-family: Merienda; 
+    font-variant: small-caps;
+}
+
+input, ul{
+    font-family: Poppins; 
+}
+
+h5{
+    font-family: Merienda; 
+    text-align: center;
+}
+
+footer{
+        font-family: Poppins;
+        position: relative;
+        background-color:#e6e6e6;
+        padding: 10px;
+        bottom:0;
+}
+
+.author{
+    font-family: Merienda;
+    text-align: center;
+}

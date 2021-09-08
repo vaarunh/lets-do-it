@@ -48,21 +48,21 @@ function addItem(e) {
 	let deleteButton = document.createElement("button");
 
 	deleteButton.className =
-		"btn-danger btn btn-sm float-right delete";
+		"btn-danger btn btn-sm float-right mr-2 delete";
 
 	deleteButton.appendChild(document.createTextNode("Delete Task"));
 
     let compButton = document.createElement("button");
 
 	compButton.className =
-		"btn-success btn btn-sm float-right comp";
+		"btn-success btn btn-sm float-right mr-2 comp";
 
 	compButton.appendChild(document.createTextNode("Mark as Complete"));
 
 	let editButton = document.createElement("button");
 
 	editButton.className =
-			"btn-warning btn btn-sm float-right edit";
+			"btn-warning btn btn-sm float-right mr-2 edit";
 
 	editButton.appendChild(document.createTextNode("Edit Task"));
 
