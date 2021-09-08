@@ -29,9 +29,10 @@ h5{
 footer{
         font-family: Poppins;
         position: relative;
-        background-color:#e6e6e6;
+        background-color: #bdbdbd;
         padding: 10px;
         bottom:0;
+        margin-top: 80px;
 }
 
 .author{
