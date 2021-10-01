@@ -6,6 +6,12 @@ head, body{
     background-size: cover;
     backdrop-filter: blur(3px); 
 }
+body{
+    min-height: 100vh;
+}
+ul,body{
+    position: relative;
+}
 
 h1{
     font-family: Poppins; 
@@ -28,14 +34,33 @@ h5{
 
 footer{
         font-family: Poppins;
-        position: relative;
-        background-color: #bdbdbd;
-        padding: 10px;
+        position: absolute;
+        background-color: #3a3a3a;
+        padding: 8px;
         bottom:0;
-        margin-top: 100px;
+        width: 100%;
+        color: white;
+        height: max-content;
 }
 
 .author{
     font-family: Merienda;
     text-align: center;
+    padding-top: 10px;
+}
+/* When the list items increase, they start touching the footer so gave a lil margin to the last list item. */
+li:last-child{
+    margin-bottom: 20px !important;
+}
+/* Media Queries for Mobile Viewports */
+@media(max-width:577px){
+    #addForm input[type="submit"]
+    {
+        margin-top: 12px;
+        width: 100%;
+    }
+    /* Child node buttons didn't have space in between and looked weird on mobile viewports*/
+    li button{
+        margin-bottom: 8px;
+    }
 }
