@@ -11,6 +11,18 @@ window.onload = () => {
 	items.addEventListener("click", removeItem);
 };
 
+function operationCompleted(msg){
+	document.getElementById("lblsuccess").innerHTML	= msg;
+
+	document.getElementById("lblsuccess")
+				.style.display = "block";
+
+	setTimeout(function() {
+		document.getElementById("lblsuccess")
+				.style.display = "none";
+	}, 3000);
+}
+
 function addItem(e) {
 	e.preventDefault();
 
@@ -113,6 +125,7 @@ function toggleButton(ref, btnID) {
 
 function completeTask(innerText){	
 	let li = createMainLiTaskElement(innerText)
+	li.appendChild(createButtonForCompletedTasks());
 	completedItems.appendChild(li);
 }
 
@@ -156,4 +169,35 @@ function createMainLiTaskElement(taskText){
 	li.appendChild(document.createTextNode(taskText));
 	return li
 }
+
+function inProgressTask(e){
+	e.preventDefault();
+	if (confirm("Are you Sure?")) {
+		let completedTaskLi = e.target.parentNode.parentNode;
+		completedTaskLi.removeChild(completedTaskLi.childNodes[1])
+		let li = createMainLiTaskElement(completedTaskLi.innerText)
+		li.appendChild(createTaskButtons());
+		
+		items.appendChild(li);
+		
+		completedItems.removeChild(completedTaskLi);
+		operationCompleted("Successfully Marked as In-Progress!")
+	}
+}
+
+function createButtonForCompletedTasks(){
+	let actions = document.createElement("div");
+	actions.className = "flex-grow-0 flex-shrink-0 align-self-start";
+
+    let moveToInprogressButton = document.createElement("button");
+	moveToInprogressButton.className = "btn-success btn btn-sm mr-2 comp";
+
+	moveToInprogressButton.appendChild(document.createTextNode("Mark as In-Progress"));	
+	moveToInprogressButton.addEventListener('click', inProgressTask)
+	actions.appendChild(moveToInprogressButton);
+
+	return actions;
+}
+
+
 
