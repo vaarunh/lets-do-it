@@ -38,7 +38,19 @@ function addItem(e) {
 
 	let newItem = document.getElementById("item").value;
 	if (newItem.trim() == "" || newItem.trim() == null)
-		return false;
+		{
+			document.getElementById("lblsuccess").innerHTML
+				= "Please enter some data!";
+			
+			document.getElementById("lblsuccess")
+						.style.display = "block";
+
+			setTimeout(function() {
+				document.getElementById("lblsuccess")
+						.style.display = "none";
+			}, 3000);
+
+			return false;}
 	else
 		document.getElementById("item").value = "";
 
@@ -123,3 +135,4 @@ function removeItem(e) {
 function toggleButton(ref, btnID) {
 	document.getElementById(btnID).disabled = false;
 }
+
