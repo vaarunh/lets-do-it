@@ -25,12 +25,23 @@
       ]
     },
     {
+      all-contributors/add-abee62
+      "login": "abee62",
+      "name": "Abhirami R",
+      "avatar_url": "https://avatars.githubusercontent.com/u/62689173?v=4",
+      "profile": "https://github.com/abee62",
+      "contributions": [
+        "code"
+         ]
+    },
+    {
       "login": "icoderharshit",
       "name": "Harshit Sharma",
       "avatar_url": "https://avatars.githubusercontent.com/u/55023091?v=4",
       "profile": "http://harshitsharma.me",
       "contributions": [
         "design"
+main
       ]
     }
   ],
