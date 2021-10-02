@@ -1,6 +1,6 @@
 # Let's Do It
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 A simple ToDo List webapp created using **JavaScript, HTML & CSS**.
 
@@ -26,6 +26,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://github.com/ankitgauri26"><img src="https://avatars.githubusercontent.com/u/22481268?v=4?s=100" width="100px;" alt=""/><br /><sub><b>ankitgauri26</b></sub></a><br /><a href="https://github.com/varunherlekar/lets-do-it/commits?author=ankitgauri26" title="Code">💻</a></td>
     <td align="center"><a href="https://mysoundwise.com"><img src="https://avatars.githubusercontent.com/u/1641990?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kenneth</b></sub></a><br /><a href="#design-kennethpdev" title="Design">🎨</a> <a href="https://github.com/varunherlekar/lets-do-it/commits?author=kennethpdev" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/abee62"><img src="https://avatars.githubusercontent.com/u/62689173?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Abhirami R</b></sub></a><br /><a href="https://github.com/varunherlekar/lets-do-it/commits?author=abee62" title="Code">💻</a></td>
   </tr>
 </table>
 
