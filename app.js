@@ -17,7 +17,7 @@ function addItem(e) {
 	if (submit.value != "Add Task") {
 		console.log("Hello");
 
-		editItem.target.parentNode.childNodes[0].data
+		editItem.target.parentNode.parentNode.childNodes[0].data
 			= document.getElementById("item").value;
 
 		submit.value = "Add Task";
@@ -101,7 +101,7 @@ function removeItem(e) {
 
 	if (e.target.classList.contains("edit")) {
 		document.getElementById("item").value =
-			e.target.parentNode.childNodes[0].data;
+			e.target.parentNode.parentNode.childNodes[0].data;
 		submit.value = "EDIT";
 		editItem = e;
 	}
