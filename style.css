@@ -62,6 +62,11 @@ footer a {
     text-align: center;
     padding-top: 10px;
 }
+
+.important {
+    background-color: #fbf71e;
+}
+
 /* When the list items increase, they start touching the footer so gave a lil margin to the last list item. */
 li:last-child{
     margin-bottom: 20px !important;
