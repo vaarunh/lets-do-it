@@ -23,6 +23,15 @@
         "design",
         "code"
       ]
+    },
+    {
+      "login": "icoderharshit",
+      "name": "Harshit Sharma",
+      "avatar_url": "https://avatars.githubusercontent.com/u/55023091?v=4",
+      "profile": "http://harshitsharma.me",
+      "contributions": [
+        "design"
+      ]
     }
   ],
   "contributorsPerLine": 7,
