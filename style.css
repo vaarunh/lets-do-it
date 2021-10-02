@@ -13,6 +13,11 @@ ul,body{
     position: relative;
 }
 
+header {
+    background-color: #3a3a3a;
+    color: white;
+}
+
 h1{
     font-family: Poppins; 
     text-align: center;
