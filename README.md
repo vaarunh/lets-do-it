@@ -12,3 +12,8 @@ A simple ToDo List webapp created using **JavaScript, HTML & CSS**.
 
 ## Screenshot
 ![Lets DO It | Screenshot](https://github.com/varunherlekar/lets-do-it/blob/main/screenshot-varunherlekar.github.io-2021.09.09-14_20_22.png?raw=true)
+
+## Contributors ✨
+<a href="https://github.com/varunherlekar/lets-do-it/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=varunherlekar/lets-do-it" />
+</a>
