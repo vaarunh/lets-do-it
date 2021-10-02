@@ -13,6 +13,16 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "kennethpdev",
+      "name": "Kenneth",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1641990?v=4",
+      "profile": "https://mysoundwise.com",
+      "contributions": [
+        "design",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
