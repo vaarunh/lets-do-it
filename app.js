@@ -91,7 +91,7 @@ function removeItem(e) {
   if (e.target.classList.contains("edit")) {
     document.getElementById("item").value =
       e.target.parentNode.parentNode.childNodes[0].data;
-    submit.value = "EDIT";
+    submit.value = "Save";
     editItem = e;
   }
 }
