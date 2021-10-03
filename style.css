@@ -1,13 +1,10 @@
-head, body{
-    cursor: url("favicon.ico"), default;
-    background-image: url(https://source.unsplash.com/1600x900/?white);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    backdrop-filter: blur(3px); 
+html {
+    font-size: 100%;
 }
 body{
+    font-size: 16px;
     min-height: 100vh;
+    cursor: url("favicon.ico"), default;
 }
 ul,body{
     position: relative;
