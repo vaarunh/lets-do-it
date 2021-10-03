@@ -1,3 +1,7 @@
+let todo = localStorage.getItem('todo') ? JSON.parse(localStorage.getItem('todo')) : new Array();
+let done = localStorage.getItem('done') ? JSON.parse(localStorage.getItem('done')) : new Array();
+let imp = localStorage.getItem('imp') ? JSON.parse(localStorage.getItem('imp')) : new Array();
+
 window.onload = () => {
   const form1 = document.querySelector("#addForm");
 
@@ -9,6 +13,33 @@ window.onload = () => {
 
   form1.addEventListener("submit", addItem);
   items.addEventListener("click", handleToDoButtonClick);
+
+  // restore in-progress
+  if(todo.length !== 0){
+    for(let i=0; i<todo.length; i++){
+      item = todo[i];
+      let li = createMainLiTaskElement(item);
+      li.appendChild(createTaskButtons());
+
+      items.appendChild(li);
+      
+      // handle imp task
+      if(imp.includes(item)){
+        li.classList.add('important');
+      }
+
+    }
+  }
+
+  // restore done
+  if(done.length !== 0){
+    for(let i=0; i<done.length; i++){
+      item = done[i];
+      let li = createMainLiTaskElement(item)
+      li.appendChild(createButtonForCompletedTasks());
+      completedItems.appendChild(li); 
+    }
+  }
 };
 
 function operationCompleted(msg){
@@ -64,6 +95,7 @@ function addItem(e) {
   li.appendChild(createTaskButtons());
 
   items.appendChild(li);
+  addlocaltodo(newItem);
 }
 
 function handleToDoButtonClick(e) {
@@ -74,6 +106,7 @@ function handleToDoButtonClick(e) {
     if (confirm("Are you Sure?")) {
       let li = e.target.parentNode.parentNode;
       items.removeChild(li);
+      removelocaltodo(li.childNodes[0].data);
       document.getElementById("lblsuccess").innerHTML =
         "Text deleted successfully";
 
@@ -91,6 +124,8 @@ function handleToDoButtonClick(e) {
       li.removeChild(li.childNodes[1]);
       completeTask(li.innerText);
       items.removeChild(li);
+      removelocaltodo(li.childNodes[0].data);
+      addlocaldone(li.childNodes[0].data)
       document.getElementById("lblsuccess").innerHTML =
         "Successfully Marked as Completed!";
 
@@ -117,10 +152,12 @@ function handleToDoButtonClick(e) {
       if(li.classList.contains("important")) {
         button.innerText = "Mark as important";
         li.classList.remove("important");
+        removelocalimp(li.childNodes[0].data);
       } else {
         button.innerText = "Mark as normal";
         li.classList.add("important");
         items.insertBefore(li, items.childNodes[0]);
+        addlocalimp(li.childNodes[0].data);
       }
     }
 }
@@ -185,6 +222,8 @@ function inProgressTask(e){
 		items.appendChild(li);
 		
 		completedItems.removeChild(completedTaskLi);
+    removelocaldone(li.childNodes[0].data);
+    addlocaltodo(li.childNodes[0].data);
 		operationCompleted("Successfully Marked as In-Progress!")
 	}
 }
@@ -209,4 +248,51 @@ function createMainLiTaskElement(taskText) {
     "list-group-item d-flex flex-row align-items-center justify-content-between flex-sm-wrap";
   li.appendChild(document.createTextNode(taskText));
   return li;
+}
+
+function addlocaltodo(task){
+  todo.push(task);
+  localStorage.setItem('todo', JSON.stringify(todo));
+}
+
+function removelocaltodo(task){
+  // console.log(task);
+  for(let i=0; i<todo.length; i++){
+    if(todo[i] === task){
+      todo.splice(i,1);
+      break;
+    }
+  }
+  localStorage.setItem('todo', JSON.stringify(todo));
+}
+
+function addlocaldone(task){
+  done.push(task);
+  localStorage.setItem('done', JSON.stringify(done));
+}
+
+function removelocaldone(task){
+  // console.log(task);
+  for(let i=0; i<done.length; i++){
+    if(done[i] === task){
+      done.splice(i,1);
+      break;
+    }
+  }
+  localStorage.setItem('done', JSON.stringify(done));
+}
+
+function addlocalimp(task){
+  imp.push(task);
+  localStorage.setItem('imp', JSON.stringify(imp));
+}
+
+function removelocalimp(task){
+  for(let i=0; i< imp.length; i++){
+    if(imp[i] === task){
+      imp.splice(i, 1);
+      break;
+    }
+  }
+  localStorage.setItem('imp', JSON.stringify(imp));
 }
