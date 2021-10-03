@@ -169,8 +169,7 @@ function toggleButton(ref, btnID) {
 function completeTask(innerText){	
 	let li = createMainLiTaskElement(innerText)
 	li.appendChild(createButtonForCompletedTasks());
-	li.style.textDecoration = "line-through"
-  completedItems.appendChild(li); 
+	completedItems.appendChild(li); 
 }
 
 function createTaskButtons() {
