@@ -228,6 +228,16 @@ function inProgressTask(e){
 	}
 }
 
+function removeTask(e){
+	e.preventDefault();
+	if (confirm("Are you Sure? This Item will be Permanently Removed.")) {
+		let completedTaskLi = e.target.parentNode.parentNode;
+		completedTaskLi.removeChild(completedTaskLi.childNodes[1])
+		completedItems.removeChild(completedTaskLi);
+		operationCompleted("Item Successfully Removed from List.")
+	}
+}
+
 function createButtonForCompletedTasks(){
 	let actions = document.createElement("div");
 	actions.className = "flex-grow-0 flex-shrink-0 align-self-start";
@@ -238,6 +248,13 @@ function createButtonForCompletedTasks(){
 	moveToInprogressButton.appendChild(document.createTextNode("Mark as In-Progress"));	
 	moveToInprogressButton.addEventListener('click', inProgressTask)
 	actions.appendChild(moveToInprogressButton);
+
+    let removeCompletedButton = document.createElement("button");
+  removeCompletedButton.className = "btn-danger btn btn-sm mr-2 comp";
+
+	removeCompletedButton.appendChild(document.createTextNode("Remove"));	
+	removeCompletedButton.addEventListener('click', removeTask)
+	actions.appendChild(removeCompletedButton);
 
 	return actions;
 }
