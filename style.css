@@ -13,9 +13,19 @@ ul,body{
     position: relative;
 }
 
+header {
+    background-color: #3a3a3a;
+    color: white;
+    padding-top: 0.5em;
+}
+
 h1{
     font-family: Poppins; 
     text-align: center;
+}
+
+#txt-pop {
+    color: turquoise;
 }
 
 h4{
@@ -41,6 +51,10 @@ footer{
         width: 100%;
         color: white;
         height: max-content;
+}
+
+footer a {
+    color: turquoise;
 }
 
 .author{
