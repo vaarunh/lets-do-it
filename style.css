@@ -59,6 +59,7 @@ h5{
       }
       footer .content p,a{
         color: #fff;
+        padding: 15px;
       }
       footer .content .box{
         width: 33%;
