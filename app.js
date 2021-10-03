@@ -140,7 +140,7 @@ function handleToDoButtonClick(e) {
   if (e.target.classList.contains("edit")) {
     document.getElementById("item").value =
       e.target.parentNode.parentNode.childNodes[0].data;
-    submit.value = "EDIT";
+    submit.value = "Save";
     editItem = e;
   }
 
@@ -314,3 +314,4 @@ function removelocalimp(task){
   }
   localStorage.setItem('imp', JSON.stringify(imp));
 }
+>>>>>>> fe5050da134eccb97260b9b77518d81765b4fec8
