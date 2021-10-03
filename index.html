@@ -4,21 +4,16 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
+	<meta name="description" content="Let's do it is a simple to-do list and task manager">
+	<meta name="keywords" content="html,css,javascript,to-do,task-list">
 	<link rel="icon" type="image/ico" href="favicon.ico">
-
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-		crossorigin="anonymous">
-
-        <link rel="stylesheet" href="style.css">
-
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Merienda&family=Poppins:wght@500&display=swap" rel="stylesheet">
-
-	<script src="app.js"></script>
-
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link type="text/css" rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Merienda&family=Poppins:wght@500&display=swap"
+		rel="stylesheet">
 	<title>Let's Do It | ToDo List </title>
 </head>
 
@@ -26,30 +21,21 @@
 	<header>
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-12 col-md-12 col-sm-12">
-				  <h1>
-                    Let's Do It | A Simple <span id="txt-pop">ToDo List</span> WebApp
-                    </h1>
+				<div class="col-12">
+					<h1>
+						Let's Do It<br /><small>A Simple <span id="txt-pop">ToDo List</span> WebApp</small>
+					</h1>
 				</div>
 			</div>
-            <br>
-            <h5 onload="getNewQuote()">
-                <i class="fas fa-quote-left"></i>
-                <span class="quote" id="quote"></span>
-                <i class="fas fa-quote-right"></i>
-                </h5>
-                <p class="author" id="author"></p>
-
 		</div>
 	</header>
-<br>
+	<main>
 	<div class="container mt-3">
 		<h4>Add Items to The List</h4>
 
-		<label id="lblsuccess" class="text-success"
-				style="display: none;">
+		<label id="lblsuccess" class="text-success" style="display: none;">
 		</label>
-		
+
 		<form id="addForm">
 			<div class="row">
 				<div class="col-lg-11 col-md-7 col-sm-7">
@@ -57,7 +43,7 @@
 				</div>
 
 				<div class="col-lg-1 col-md-5 col-sm-5 mt-xs-2 mt-md-0">
-				<input type="submit" class="btn btn-dark" id="submit" value="Add Task" disabled>
+					<input type="submit" class="btn btn-dark" id="submit" value="Add Task" disabled>
 				</div>
 			</div>
 		</form>
@@ -66,25 +52,24 @@
 
 		<form id="addForm">
 			<ul class="list-group" id="items"></ul>
-            <br>
+			<br>
 		</form>
-		
+
 		<h4 class="mt-4">Completed Tasks</h4>
 
 		<form id="completeForm">
 			<ul class="list-group" id="completedItems"></ul>
-            <br>
-            <br>
+			<br>
+			<br>
 		</form>
 		<br />
 		<br />
 	</div>
-        <footer>
-            <p class="text-center">Project by <a href="https://github.com/varunherlekar"> Varun Herlekar</a> | Quotes API: <a href="https://type.fit/api/quotes">Type.Fit</a></p>
-        </footer>
-
-    <script src="quotes.js"></script>
-
+	</main>
+	<footer class="text-center">
+		<span>Project by <a href="https://github.com/varunherlekar"> Varun Herlekar</a></span>
+	</footer>
+	<script src="app.js" async></script>
 </body>
 
 </html>
