@@ -11,6 +11,18 @@ window.onload = () => {
   items.addEventListener("click", handleToDoButtonClick);
 };
 
+function operationCompleted(msg){
+	document.getElementById("lblsuccess").innerHTML	= msg;
+
+	document.getElementById("lblsuccess")
+				.style.display = "block";
+
+	setTimeout(function() {
+		document.getElementById("lblsuccess")
+				.style.display = "none";
+	}, 3000);
+}
+
 function addItem(e) {
   e.preventDefault();
 
@@ -56,7 +68,7 @@ function addItem(e) {
 
 function handleToDoButtonClick(e) {
   e.preventDefault();
-
+  
   // Handle delete todo button click
   if (e.target.classList.contains("delete")) {
     if (confirm("Are you Sure?")) {
@@ -72,7 +84,6 @@ function handleToDoButtonClick(e) {
       }, 3000);
     }
   }
-
   // Handle complete todo button click
   if (e.target.classList.contains("comp")) {
     if (confirm("Are you Sure?")) {
@@ -90,7 +101,6 @@ function handleToDoButtonClick(e) {
       }, 3000);
     }
   }
-
   // Handle edit task button click
   if (e.target.classList.contains("edit")) {
     document.getElementById("item").value =
@@ -99,29 +109,30 @@ function handleToDoButtonClick(e) {
     editItem = e;
   }
 
-  // Handle important todo button click
-  if(e.target.classList.contains("imp")) {
-    let button = e.target;
-    let li = button.parentNode.parentNode;
-
-    if(li.classList.contains("important")) {
-      button.innerText = "Mark as important";
-      li.classList.remove("important");
-    } else {
-      button.innerText = "Mark as normal";
-      li.classList.add("important");
-      items.insertBefore(li, items.childNodes[0]);
+    // Handle important todo button click
+    if(e.target.classList.contains("imp")) {
+      let button = e.target;
+      let li = button.parentNode.parentNode;
+  
+      if(li.classList.contains("important")) {
+        button.innerText = "Mark as important";
+        li.classList.remove("important");
+      } else {
+        button.innerText = "Mark as normal";
+        li.classList.add("important");
+        items.insertBefore(li, items.childNodes[0]);
+      }
     }
-  }
 }
 
 function toggleButton(ref, btnID) {
   document.getElementById(btnID).disabled = false;
 }
 
-function completeTask(innerText) {
-  let li = createMainLiTaskElement(innerText);
-  completedItems.appendChild(li);
+function completeTask(innerText){	
+	let li = createMainLiTaskElement(innerText)
+	li.appendChild(createButtonForCompletedTasks());
+	completedItems.appendChild(li); 
 }
 
 function createTaskButtons() {
@@ -160,6 +171,36 @@ function createTaskButtons() {
   actions.appendChild(importantBtn);
 
   return actions;
+}
+
+
+function inProgressTask(e){
+	e.preventDefault();
+	if (confirm("Are you Sure?")) {
+		let completedTaskLi = e.target.parentNode.parentNode;
+		completedTaskLi.removeChild(completedTaskLi.childNodes[1])
+		let li = createMainLiTaskElement(completedTaskLi.innerText)
+		li.appendChild(createTaskButtons());
+		
+		items.appendChild(li);
+		
+		completedItems.removeChild(completedTaskLi);
+		operationCompleted("Successfully Marked as In-Progress!")
+	}
+}
+
+function createButtonForCompletedTasks(){
+	let actions = document.createElement("div");
+	actions.className = "flex-grow-0 flex-shrink-0 align-self-start";
+
+    let moveToInprogressButton = document.createElement("button");
+	moveToInprogressButton.className = "btn-success btn btn-sm mr-2 comp";
+
+	moveToInprogressButton.appendChild(document.createTextNode("Mark as In-Progress"));	
+	moveToInprogressButton.addEventListener('click', inProgressTask)
+	actions.appendChild(moveToInprogressButton);
+
+	return actions;
 }
 
 function createMainLiTaskElement(taskText) {
