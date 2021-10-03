@@ -8,7 +8,7 @@ window.onload = () => {
   let editItem = null;
 
   form1.addEventListener("submit", addItem);
-  items.addEventListener("click", removeItem);
+  items.addEventListener("click", handleToDoButtonClick);
 };
 
 function operationCompleted(msg){
@@ -66,8 +66,10 @@ function addItem(e) {
   items.appendChild(li);
 }
 
-function removeItem(e) {
+function handleToDoButtonClick(e) {
   e.preventDefault();
+  
+  // Handle delete todo button click
   if (e.target.classList.contains("delete")) {
     if (confirm("Are you Sure?")) {
       let li = e.target.parentNode.parentNode;
@@ -82,7 +84,7 @@ function removeItem(e) {
       }, 3000);
     }
   }
-
+  // Handle complete todo button click
   if (e.target.classList.contains("comp")) {
     if (confirm("Are you Sure?")) {
       let li = e.target.parentNode.parentNode;
@@ -99,13 +101,28 @@ function removeItem(e) {
       }, 3000);
     }
   }
-
+  // Handle edit task button click
   if (e.target.classList.contains("edit")) {
     document.getElementById("item").value =
       e.target.parentNode.parentNode.childNodes[0].data;
     submit.value = "EDIT";
     editItem = e;
   }
+
+    // Handle important todo button click
+    if(e.target.classList.contains("imp")) {
+      let button = e.target;
+      let li = button.parentNode.parentNode;
+  
+      if(li.classList.contains("important")) {
+        button.innerText = "Mark as important";
+        li.classList.remove("important");
+      } else {
+        button.innerText = "Mark as normal";
+        li.classList.add("important");
+        items.insertBefore(li, items.childNodes[0]);
+      }
+    }
 }
 
 function toggleButton(ref, btnID) {
@@ -193,4 +210,3 @@ function createMainLiTaskElement(taskText) {
   li.appendChild(document.createTextNode(taskText));
   return li;
 }
-

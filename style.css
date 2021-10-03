@@ -39,6 +39,10 @@ h5{
     text-align: center;
 }
 
+.important {
+    background-color: #fbf71e;
+}
+
     /*footer styling*/
 
     footer .footer-1{
@@ -173,10 +177,9 @@ h5{
           padding-left: 0;
         }
       }
-                                              /* FOOTER styling over here*/
-
-
-/*                                              footer{
+/* FOOTER styling over here */
+/*      
+footer{
         font-family: Poppins;
         position: absolute;
         background-color: #3a3a3a;
@@ -186,17 +189,14 @@ h5{
         color: white;
         height: max-content;
 }
-
 footer a {
     color: turquoise;
 }
-
 .author{
     font-family: Merienda;
     text-align: center;
     padding-top: 10px;
 }
-
 */
 
 /* When the list items increase, they start touching the footer so gave a lil margin to the last list item. */
