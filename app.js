@@ -13,7 +13,7 @@ window.onload = () => {
 
   form1.addEventListener("submit", addItem);
   items.addEventListener("click", handleToDoButtonClick);
-
+  completedItems.addEventListener("click", handleToDoButtonClickForCompleted);
   // restore in-progress
   if(todo.length !== 0){
     for(let i=0; i<todo.length; i++){
@@ -210,32 +210,36 @@ function createTaskButtons() {
   return actions;
 }
 
+function handleToDoButtonClickForCompleted(e){
+  e.preventDefault();
 
-function inProgressTask(e){
-	e.preventDefault();
-	if (confirm("Are you Sure?")) {
-		let completedTaskLi = e.target.parentNode.parentNode;
-		completedTaskLi.removeChild(completedTaskLi.childNodes[1])
-		let li = createMainLiTaskElement(completedTaskLi.innerText)
-		li.appendChild(createTaskButtons());
-		
-		items.appendChild(li);
-		
-		completedItems.removeChild(completedTaskLi);
-    removelocaldone(li.childNodes[0].data);
-    addlocaltodo(li.childNodes[0].data);
-		operationCompleted("Successfully Marked as In-Progress!")
-	}
-}
-
-function removeTask(e){
-	e.preventDefault();
-	if (confirm("Are you Sure? This Item will be Permanently Removed.")) {
-		let completedTaskLi = e.target.parentNode.parentNode;
-		completedTaskLi.removeChild(completedTaskLi.childNodes[1])
-		completedItems.removeChild(completedTaskLi);
-		operationCompleted("Item Successfully Removed from List.")
-	}
+  //Handle inProgress task button click
+  if(e.target.classList.contains("inpro")) {
+    if (confirm("Are you Sure?")) {
+      let completedTaskLi = e.target.parentNode.parentNode;
+      completedTaskLi.removeChild(completedTaskLi.childNodes[1])
+      let li = createMainLiTaskElement(completedTaskLi.innerText)
+      li.appendChild(createTaskButtons());
+      
+      items.appendChild(li);
+      
+      completedItems.removeChild(completedTaskLi);
+      
+      removelocaldone(li.childNodes[0].data);
+      addlocaltodo(li.childNodes[0].data);
+      
+      operationCompleted("Successfully Marked as In-Progress!")
+    }
+  }
+  //Handle Remove Item After Completion click
+  if(e.target.classList.contains("remove")) {
+    if (confirm("Are you Sure? This Item will be Permanently Removed.")) {
+      let completedTaskLi = e.target.parentNode.parentNode;
+      completedTaskLi.removeChild(completedTaskLi.childNodes[1])
+      completedItems.removeChild(completedTaskLi);
+      operationCompleted("Item Successfully Removed from List.")
+    }
+  }
 }
 
 function createButtonForCompletedTasks(){
@@ -243,17 +247,15 @@ function createButtonForCompletedTasks(){
 	actions.className = "flex-grow-0 flex-shrink-0 align-self-start";
 
     let moveToInprogressButton = document.createElement("button");
-	moveToInprogressButton.className = "btn-success btn btn-sm mr-2 comp";
+	moveToInprogressButton.className = "btn-success btn btn-sm mr-2 inpro";
 
 	moveToInprogressButton.appendChild(document.createTextNode("Mark as In-Progress"));	
-	moveToInprogressButton.addEventListener('click', inProgressTask)
 	actions.appendChild(moveToInprogressButton);
 
     let removeCompletedButton = document.createElement("button");
-  removeCompletedButton.className = "btn-danger btn btn-sm mr-2 comp";
+  removeCompletedButton.className = "btn-danger btn btn-sm mr-2 remove";
 
 	removeCompletedButton.appendChild(document.createTextNode("Remove"));	
-	removeCompletedButton.addEventListener('click', removeTask)
 	actions.appendChild(removeCompletedButton);
 
 	return actions;
