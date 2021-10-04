@@ -237,6 +237,7 @@ function handleToDoButtonClickForCompleted(e){
       let completedTaskLi = e.target.parentNode.parentNode;
       completedTaskLi.removeChild(completedTaskLi.childNodes[1])
       completedItems.removeChild(completedTaskLi);
+      removelocaldone(completedTaskLi.innerText);
       operationCompleted("Item Successfully Removed from List.")
     }
   }
