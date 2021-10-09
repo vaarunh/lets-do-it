@@ -179,7 +179,7 @@ function completeTask(innerText){
 
 function createTaskButtons() {
   let actions = document.createElement("div");
-  actions.className = "flex-grow-0 flex-shrink-0 align-self-start";
+  actions.className = "actions flex-grow-0 flex-shrink-0 align-self-start";
 
   let deleteButton = document.createElement("button");
 
@@ -250,7 +250,7 @@ function handleToDoButtonClickForCompleted(e){
 
 function createButtonForCompletedTasks(){
 	let actions = document.createElement("div");
-	actions.className = "flex-grow-0 flex-shrink-0 align-self-start";
+	actions.className = "actions flex-grow-0 flex-shrink-0 align-self-start";
 
     let moveToInprogressButton = document.createElement("button");
 	moveToInprogressButton.className = "btn-success btn btn-sm mr-2 inpro";
