@@ -56,29 +56,34 @@ function operationCompleted(msg){
 
 function addItem(e) {
   e.preventDefault();
-
+  let newItem = document.getElementById("item").value;
   if (submit.value != "Add Task") {
     console.log("Hello");
 
-    editItem.target.parentNode.parentNode.childNodes[0].data =
-      document.getElementById("item").value;
+    if (newItem.trim() == "" || newItem.trim() == null) {
+      operationCompleted("Please enter some data!")
+    }
+    else{
+      editItem.target.parentNode.parentNode.childNodes[0].data =
+        document.getElementById("item").value;
 
-    submit.value = "Add Task";
-    document.getElementById("item").value = "";
+      submit.value = "Add Task";
+      document.getElementById("item").value = "";
 
-    document.getElementById("lblsuccess").innerHTML =
-      "Text edited successfully";
+      document.getElementById("lblsuccess").innerHTML =
+        "Text edited successfully";
 
-    document.getElementById("lblsuccess").style.display = "block";
+      document.getElementById("lblsuccess").style.display = "block";
 
-    setTimeout(function () {
-      document.getElementById("lblsuccess").style.display = "none";
-    }, 3000);
+      setTimeout(function () {
+        document.getElementById("lblsuccess").style.display = "none";
+      }, 3000);
 
-    return false;
+      return false;
+    }
   }
 
-  let newItem = document.getElementById("item").value;
+  
   if (newItem.trim() == "" || newItem.trim() == null) {
     document.getElementById("lblsuccess").innerHTML = "Please enter some data!";
 
