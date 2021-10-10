@@ -37,6 +37,16 @@ h4 {
   font-variant: small-caps;
 }
 
+.actions {
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.list-group-item:hover .actions {
+    opacity: 100%;
+    transition: 0.2s;
+}
+
 input,
 ul {
   font-family: Poppins;
