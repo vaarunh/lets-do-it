@@ -1,3 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap');
+
+body{
+  background-image: url(https://source.unsplash.com/1600x900/?moder-design,todo,study);
+
+}
+
 html {
   font-size: 100%;
 }
@@ -26,7 +34,7 @@ header {
 
 
 h1 {
-  font-family: Poppins;
+  font-family: "Poppins", sans-serif;
   text-align: center;
   transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
   font-family: 'Itim', cursive;
@@ -41,9 +49,24 @@ h1:hover {
 }
 
 h4 {
-  font-family: Merienda;
+  font-family: "Poppins";
   font-variant: small-caps;
+  font-weight: 500;
 }
+
+.mt-3{
+  position: relative;
+  background: rgba(255, 255, 255, 0.5);;
+  opacity: 0.9;
+  border-radius: 15px;
+  padding: 50px 80px 20px 50px;
+  backdrop-filter: blur(20px);
+
+}
+
+.btn{
+  font-weight: 900px;
+} 
 
 .actions {
     opacity: 0;
@@ -61,7 +84,7 @@ ul {
 }
 
 h5 {
-  font-family: Merienda;
+  font-family: "Poppins";
   text-align: center;
 }
 
@@ -106,18 +129,24 @@ footer .content .box {
 
 
 footer .content .topic {
-  font-size: 22px;
-  font-weight: 600;
+  font-size: 24px;
+  font-weight: 500;
   color: #fff;
   margin-bottom: 16px;
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: bold;
 }
 footer .content p {
   text-align: justify;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: bold;
   /* font-family: 'Itim', cursive; */
+
+  font-family: "Poppins", sans-serif;
+}
+footer .content p {
+  text-align: justify;
+  font-family: "Open Sans", "Cambria", Georgia, "Times New Roman", serif;
+  font-weight: 400;
+
 }
 footer .content .lower .topic {
   margin: 24px 0 5px 0;
@@ -188,7 +217,7 @@ footer .bottom {
   text-align: right;
   color: #d9d9d9;
   padding: 0 40px 5px 0;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+  font-family: "Open Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 footer .bottom a {
