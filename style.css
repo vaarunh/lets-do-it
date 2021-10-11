@@ -4,7 +4,7 @@ html {
 body {
   font-size: 16px;
   min-height: 100vh;
-  cursor: url("favicon.ico"), default;
+  /* cursor: url("favicon.ico"), default; */
   display: grid;
   grid-template-rows: auto 1fr auto;
 }
@@ -17,16 +17,24 @@ header {
   background-color: #3a3a3a;
   color: white;
   padding-top: 0.5em;
+
+  
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
 }
+
 
 h1 {
   font-family: Poppins;
   text-align: center;
+  transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+  font-family: 'Itim', cursive;
+  font-weight: bold;
 }
 h1:hover {
   color: rgb(205, 248, 244);
   letter-spacing: 0.01em;
-  transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 #txt-pop {
   color: turquoise;
@@ -60,7 +68,9 @@ h5 {
 .important {
   background-color: #fbf71e;
 }
-
+.btn-1{
+  /* cursor: pointer; */
+}
 /*footer styling*/
 
 footer .footer-1 {
@@ -68,8 +78,13 @@ footer .footer-1 {
   position: relative;
   bottom: 0;
   left: 0;
-  background: #111;
+  background: #000000;
+  
+  background: linear-gradient(-45deg, #127928, #71830b, #200d75, #800876);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
 }
+
 footer .content {
   max-width: 1350px;
   margin: auto;
@@ -86,28 +101,43 @@ footer .content .box {
   width: 33%;
   transition: all 0.4s ease;
 }
+
+
+
+
 footer .content .topic {
   font-size: 22px;
   font-weight: 600;
   color: #fff;
   margin-bottom: 16px;
-  font-family: "Times New Roman", Times, serif;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: bold;
 }
 footer .content p {
   text-align: justify;
-  font-family: "Cambria", Georgia, "Times New Roman", serif;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: bold;
+  /* font-family: 'Itim', cursive; */
 }
 footer .content .lower .topic {
   margin: 24px 0 5px 0;
 }
-footer .content .lower i {
-  padding-right: 16px;
+
+footer .content .lower a {
+  padding-right: 10px;
 }
+footer .content .lower i {
+  padding-right: 2px;
+}
+
 footer .content .middle {
   padding-left: 80px;
 }
-footer .content .middle a {
-  line-height: 32px;
+footer .content .middle div a {
+  /* line-height: 5px; */
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  margin-bottom: 100px;
 }
 footer .content .right input[type="text"] {
   height: 45px;
@@ -169,6 +199,7 @@ footer a {
 }
 footer a:hover {
   color: #eb2f06;
+  text-decoration: none;
 }
 @media (max-width: 1100px) {
   footer .content .middle {
@@ -231,4 +262,18 @@ li:last-child {
   li button {
     margin-bottom: 8px;
   }
+}
+
+/* Animations */
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
