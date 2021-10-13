@@ -185,19 +185,35 @@ function createTaskButtons() {
 
   deleteButton.className = "btn-danger btn btn-sm mr-2 delete";
 
-  deleteButton.appendChild(document.createTextNode("Delete Task"));
+  deleteButton.appendChild(document.createTextNode("Delete Task  "));
+
+  //icon for delete button
+  var img = document.createElement('img'); 
+  img.src = 'delete.png';
+  deleteButton.appendChild(img);
 
   let compButton = document.createElement("button");
 
   compButton.className = "btn-success btn btn-sm mr-2 comp";
 
-  compButton.appendChild(document.createTextNode("Mark as Complete"));
+  compButton.appendChild(document.createTextNode("Mark as Complete  "));
+
+  
+  //icon for mark as done button
+  var doneImg = document.createElement('img'); 
+  doneImg.src = 'done.png';
+  compButton.appendChild(doneImg);
 
   let editButton = document.createElement("button");
 
   editButton.className = "btn-warning btn btn-sm mr-2 edit";
 
-  editButton.appendChild(document.createTextNode("Edit Task"));
+  editButton.appendChild(document.createTextNode("Edit Task  "));
+
+  //icon for edit button
+  var editImg = document.createElement('img'); 
+  editImg.src = 'edit.png';
+  editButton.appendChild(editImg);
 
   //Adding important button
 
@@ -205,7 +221,12 @@ function createTaskButtons() {
 
   importantBtn.className = "btn btn-warning btn-sm mr-2 imp";
 
-  importantBtn.appendChild(document.createTextNode("Mark as important"));
+  importantBtn.appendChild(document.createTextNode("Mark as important  "));
+  
+  //icon for mark as important button
+  var impImg = document.createElement('img'); 
+  impImg.src = 'important.png';
+  importantBtn.appendChild(impImg);
 
   actions.appendChild(deleteButton);
   actions.appendChild(editButton);
