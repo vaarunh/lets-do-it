@@ -83,7 +83,9 @@ h5 {
 .important {
   background-color: #fbf71e;
 }
-
+#completedItems li{
+  text-decoration: line-through;
+}
 /*footer styling*/
 
 footer .footer-1 {
