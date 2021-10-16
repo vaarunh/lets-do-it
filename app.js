@@ -189,7 +189,7 @@ function createTaskButtons() {
 
   //icon for delete button
   var img = document.createElement('img'); 
-  img.src = 'delete.png';
+  img.src = 'icons/delete.png';
   deleteButton.appendChild(img);
 
   let compButton = document.createElement("button");
@@ -201,7 +201,7 @@ function createTaskButtons() {
   
   //icon for mark as done button
   var doneImg = document.createElement('img'); 
-  doneImg.src = 'done.png';
+  doneImg.src = 'icons/done.png';
   compButton.appendChild(doneImg);
 
   let editButton = document.createElement("button");
@@ -212,7 +212,7 @@ function createTaskButtons() {
 
   //icon for edit button
   var editImg = document.createElement('img'); 
-  editImg.src = 'edit.png';
+  editImg.src = 'icons/edit.png';
   editButton.appendChild(editImg);
 
   //Adding important button
@@ -225,7 +225,7 @@ function createTaskButtons() {
   
   //icon for mark as important button
   var impImg = document.createElement('img'); 
-  impImg.src = 'important.png';
+  impImg.src = 'icons/important.png';
   importantBtn.appendChild(impImg);
 
   actions.appendChild(deleteButton);
