@@ -16,8 +16,7 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
 }
-ul,
-body {
+ul,body {
   position: relative;
 }
 
@@ -44,6 +43,11 @@ h4 {
   font-family: "Poppins";
   font-variant: small-caps;
   font-weight: 500;
+}
+
+h5 {
+  font-family: "Poppins";
+  text-align: center;
 }
 
 .mt-3{
@@ -221,6 +225,14 @@ footer a:hover {
     padding-left: 0;
   }
 }
+
+hr{
+  width: 90%;
+  border: 0;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  margin: 20px auto;
+}
+
 /* FOOTER styling over here */
 /*      
 footer{
