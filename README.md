@@ -11,7 +11,7 @@ A simple ToDo List webapp created using **JavaScript, HTML & CSS**.
 **Live Preview: https://varunherlekar.github.io/lets-do-it/**
 
 ## Screenshot
-![Lets DO It | Screenshot](https://github.com/varunherlekar/lets-do-it/blob/main/screenshot-varunherlekar.github.io-2021.09.09-14_20_22.png?raw=true)
+![Lets DO It | Screenshot](https://github.com/varunherlekar/lets-do-it/blob/main/screenshot-varunherlekar.github.io-2021.10.18-23_19_52.png?raw=true)
 
 ## Hacktober Fest 2021 Contributors ✨
 <a href="https://github.com/varunherlekar/lets-do-it/graphs/contributors">
