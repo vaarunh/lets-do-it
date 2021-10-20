@@ -42,6 +42,15 @@ window.onload = () => {
   }
 };
 
+function useAlert(msg, success = true) {
+  var div = document.createElement("div");
+  var alertClass = success ? 'alert-success' : 'alert-danger';
+  div.className = 'alert ' + alertClass;
+  div.role = 'alert';
+  div.innerHTML = msg;
+  return div.outerHTML;
+}
+
 function operationCompleted(msg){
 	document.getElementById("lblsuccess").innerHTML	= msg;
 
@@ -61,7 +70,7 @@ function addItem(e) {
     console.log("Hello");
 
     if (newItem.trim() == "" || newItem.trim() == null) {
-      operationCompleted("Please enter some data!")
+      operationCompleted(useAlert("Please enter some data!", false));
     }
     else{
       editItem.target.parentNode.parentNode.childNodes[0].data =
@@ -71,7 +80,7 @@ function addItem(e) {
       document.getElementById("item").value = "";
 
       document.getElementById("lblsuccess").innerHTML =
-        "Text edited successfully";
+        useAlert("Text edited successfully");
 
       document.getElementById("lblsuccess").style.display = "block";
 
@@ -85,7 +94,8 @@ function addItem(e) {
 
   
   if (newItem.trim() == "" || newItem.trim() == null) {
-    document.getElementById("lblsuccess").innerHTML = "Please enter some data!";
+    document.getElementById("lblsuccess").innerHTML =
+      useAlert("Please enter some data!", false);
 
     document.getElementById("lblsuccess").style.display = "block";
 
@@ -113,7 +123,7 @@ function handleToDoButtonClick(e) {
       items.removeChild(li);
       removelocaltodo(li.childNodes[0].data);
       document.getElementById("lblsuccess").innerHTML =
-        "Text deleted successfully";
+        useAlert("Text deleted successfully");
 
       document.getElementById("lblsuccess").style.display = "block";
 
@@ -132,7 +142,7 @@ function handleToDoButtonClick(e) {
       removelocaltodo(li.childNodes[0].data);
       addlocaldone(li.childNodes[0].data)
       document.getElementById("lblsuccess").innerHTML =
-        "Successfully Marked as Completed!";
+        useAlert("Successfully Marked as Completed!");
 
       document.getElementById("lblsuccess").style.display = "block";
 
@@ -254,7 +264,7 @@ function handleToDoButtonClickForCompleted(e){
       removelocaldone(li.childNodes[0].data);
       addlocaltodo(li.childNodes[0].data);
       
-      operationCompleted("Successfully Marked as In-Progress!")
+      operationCompleted(useAlert("Successfully Marked as In-Progress!"));
     }
   }
   //Handle Remove Item After Completion click
@@ -264,7 +274,7 @@ function handleToDoButtonClickForCompleted(e){
       completedTaskLi.removeChild(completedTaskLi.childNodes[1])
       completedItems.removeChild(completedTaskLi);
       removelocaldone(completedTaskLi.innerText);
-      operationCompleted("Item Successfully Removed from List.")
+      operationCompleted(useAlert("Item Successfully Removed from List."))
     }
   }
 }
