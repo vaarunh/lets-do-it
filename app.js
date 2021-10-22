@@ -208,9 +208,7 @@ function createTaskButtons() {
 
   compButton.appendChild(document.createTextNode("Mark as Complete  "));
 
-  
-  //icon for mark as done button
-  var doneImg = document.createElement('img'); 
+    var doneImg = document.createElement('img'); 
   doneImg.src = 'icons/done.png';
   compButton.appendChild(doneImg);
 
@@ -233,7 +231,6 @@ function createTaskButtons() {
 
   importantBtn.appendChild(document.createTextNode("Mark as important  "));
   
-  //icon for mark as important button
   var impImg = document.createElement('img'); 
   impImg.src = 'icons/important.png';
   importantBtn.appendChild(impImg);
